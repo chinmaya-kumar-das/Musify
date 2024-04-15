@@ -18,6 +18,11 @@ function App() {
   useEffect(()=>{
     getTracks();
   },{})
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      getTracks();
+    }
+  };
   return (
     <>
       <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
@@ -35,9 +40,10 @@ function App() {
               onChange={(event) => {
                 setKeyword(event.target.value);
               }}
+              onKeyPress={handleKeyPress}
               className="form-control me-2 w-75"
               type="search"
-              placeholder="Search"
+              placeholder='Search by Artist, Album, Playlist, Track....... '
               aria-label="Search"
             />
             <button
@@ -93,6 +99,8 @@ function App() {
           </div>
         </div>
       </div>
+      <footer className="bg-dark text-light text-center py-3">© 2024 Musify. All Rights Reserved.</footer>
+
     </>
   );
 }
