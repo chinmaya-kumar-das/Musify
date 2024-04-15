@@ -8,7 +8,7 @@ function App() {
   const getTracks = async () => {
     setIsLoading(true)
     let data = await fetch(
-      `https://v1.nocodeapi.com/chinmayakumardas/spotify/FRUeBzKIIiOGvpaX/search?q=${keyword===" "?"trending hindi today":keyword}&type=track`
+      `https://v1.nocodeapi.com/chinmayakumar/spotify/pEuwvJyxEzLVjfLv/search?q=${keyword===" "?"trending hindi today":keyword}&type=track`
     );
     let convertedData = await data.json();
     // console.log(convertedData.tracks.items);
